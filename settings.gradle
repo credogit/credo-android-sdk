@@ -1,0 +1,3 @@
+include ':CredoPayment'
+include ':ExampleApp'
+rootProject.name = "Payment"

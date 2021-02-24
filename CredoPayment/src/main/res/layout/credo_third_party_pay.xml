@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ThirdPartyPay"
+    android:background="#000">
+
+    <RelativeLayout
+        android:id="@+id/main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="25dp"
+        android:background="@drawable/main_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvCard"
+            >
+            <include layout="@layout/pay_with_layout"
+                />
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lvCard"
+            android:background="@drawable/bg"
+            android:elevation="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/logoRL"
+                android:layout_marginHorizontal="54dp"
+                android:layout_marginVertical="10dp">
+                <include layout="@layout/balance_layout"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/loading"
+                android:layout_centerInParent="true"
+                android:id="@+id/loading"/>
+
+            <LinearLayout
+                android:id="@+id/logoLL"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logoRL"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/cardType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/sbgs" />
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:fontFamily="@font/pangram"
+                    android:text="Enter your card details to pay"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Card Number"
+                    android:fontFamily="@font/pangram_light"
+                    android:textColor="#aaa"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/cardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:hint="0000 0000 0000 0000"
+                    android:textColorHint="#888"
+                    android:fontFamily="@font/pangram_light"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingStart="30dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#888"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/expiryLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="7dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Card Expiry"
+                            android:fontFamily="@font/pangram_light"
+                            android:textColor="#aaa"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/cardExpiry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:hint="MM/YY"
+                            android:textColorHint="#888"
+                            android:inputType="number|text"
+                            android:maxLength="7"
+                            android:fontFamily="@font/pangram_light"
+                            android:maxLines="1"
+                            android:paddingStart="30dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="20dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="#888"
+                            android:textSize="18sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cvvLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CVV"
+                            android:fontFamily="@font/pangram_light"
+                            android:textColor="#aaa"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/cardCVV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:hint="123"
+                            android:textColorHint="#888"
+                            android:fontFamily="@font/pangram_light"
+                            android:inputType="numberPassword"
+                            android:maxLength="3"
+                            android:maxLines="1"
+                            android:paddingStart="30dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="20dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="#888"
+                            android:textSize="18sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/cardPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_bg"
+                    android:fontFamily="@font/pangram"
+                    android:onClick="cardPay"
+                    android:text="Pay N5, 000"
+                    android:textColor="#fff"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_bg"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true">
+        <include layout="@layout/footer"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
